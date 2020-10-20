@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-<header class="m-header">
+<header class="m-header test">
 	<div class="hd-in flexwrap">
 		<h1 class="logo"><a href="index.html">닥터모아</a></h1>
 		<div class="src-out">
@@ -82,6 +82,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="new-dt clearfix">
 				<h2>새로운 소식</h2>
 				<ul class="new-ul">
+
 					<li>
 						<a href="">
 							<div class="new-img" style="background-image: url(assets/img/bg.jpg);"></div>
@@ -336,11 +337,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</ul>
 					</div>
 					<div>
-						<h3 class="flexwrap">자유게시판<a href="">더보기<i class="plus-i"></i></a></h3>
+						<h3 class="flexwrap">자유게시판<a href="board/boardlist?board_type=B">더보기<i class="plus-i"></i></a></h3>
 						<ul class="comm-ul">
-							<li>방문후기 남기기. <span>1시간전</span></li>
-							<li>방문후기 남기기. <span>1시간전</span></li>
-							<li>방문후기 남기기. <span>1시간전</span></li>
+							<?php if(@$listB) {
+								foreach ($listB as $row) {
+									?>
+									<li><?php echo $row->title; ?><span>1시간전</span></li>
+									<?php
+								}
+							}
+							?>
 						</ul>
 					</div>
 					<div>
@@ -352,27 +358,42 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</ul>
 					</div>
 					<div>
-						<h3 class="flexwrap">제품판매<a href="">더보기<i class="plus-i"></i></a></h3>
+						<h3 class="flexwrap">제품판매<a href="board/boardlist?board_type=D">더보기<i class="plus-i"></i></a></h3>
 						<ul class="comm-ul">
-							<li>방문후기 남기기. <span>1시간전</span></li>
-							<li>방문후기 남기기. <span>1시간전</span></li>
-							<li>방문후기 남기기. <span>1시간전</span></li>
+							<?php if(@$listD) {
+								foreach ($listD as $row) {
+									?>
+									<li><?php echo $row->title; ?><span>1시간전</span></li>
+									<?php
+								}
+							}
+							?>
 						</ul>
 					</div>
 					<div>
-						<h3 class="flexwrap">구인구직<a href="">더보기<i class="plus-i"></i></a></h3>
+						<h3 class="flexwrap">구인구직<a href="board/boardlist?board_type=C">더보기<i class="plus-i"></i></a></h3>
 						<ul class="comm-ul">
-							<li>방문후기 남기기. <span>1시간전</span></li>
-							<li>방문후기 남기기. <span>1시간전</span></li>
-							<li>방문후기 남기기. <span>1시간전</span></li>
+							<?php if(@$listC) {
+								foreach ($listC as $row) {
+									?>
+									<li><?php echo $row->title; ?><span>1시간전</span></li>
+									<?php
+								}
+							}
+							?>
 						</ul>
 					</div>
 					<div>
-						<h3 class="flexwrap">공지사항<a href="">더보기<i class="plus-i"></i></a></h3>
+						<h3 class="flexwrap">공지사항<a href="board/boardlist?board_type=A">더보기<i class="plus-i"></i></a></h3>
 						<ul class="comm-ul">
-							<li>방문후기 남기기. <span>1시간전</span></li>
-							<li>방문후기 남기기. <span>1시간전</span></li>
-							<li>방문후기 남기기. <span>1시간전</span></li>
+							<?php if(@$listA) {
+								foreach ($listA as $row) {
+									?>
+									<li><?php echo $row->title; ?><span>1시간전</span></li>
+									<?php
+								}
+							}
+							?>
 						</ul>
 					</div>
 				</div>

@@ -83,10 +83,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<li><a href=""><i class="location-i"></i></a></li>
 		<li><a href=""><i class="search-i"></i></a></li>
 		<li><a href=""><i class="home-i"></i></a></li>
-		<li><a href=""><i class="mypage-i"></i></a></li>
+		<li><a class="userIcon" data-id="<?=@$this->session->userdata('logged_in')?'logged_in':''?>"><i class="mypage-i"></i></a></li>
 	</ul>
 </nav>
-
+<script type="text/javascript" src="/assets/plugins/moment/moment.min.js"></script>
+<script type="text/javascript" src="/assets/plugins/moment/locale/ko.js"></script>
+<script type="text/javascript" src="/assets/plugins/daterangepicker/daterangepicker.js"></script>
+<script src="/assets/dist/js/jquery.inputmask.min.js"></script><!--inputmask 사용 시 포함-->
 <script src="/assets/js/common.js"></script>
 <script src="/assets/js/system.js"></script>
 <?php

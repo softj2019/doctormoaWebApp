@@ -40,6 +40,20 @@ class Member extends CI_Controller {
 			$this->{"{$method}"}();
 		}
     }
+	//아이디찾기
+	public function forid(){
+
+		$this->load->view('layout/topnavstyle/header');
+		$this->load->view('member/forid');
+		$this->load->view('layout/topnavstyle/footerEmpty');
+	}
+	//비밀번호 찾기
+	public function forpw(){
+
+		$this->load->view('layout/topnavstyle/header');
+		$this->load->view('member/forpw');
+		$this->load->view('layout/topnavstyle/footerEmpty');
+	}
 	//로그인
     public function login(){
 

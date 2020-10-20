@@ -44,19 +44,16 @@ class Main  extends CI_Controller
 		$data['page_title']="구독신청";
 		$data['menu_code']="001";
 
-
-		//페이징 base_url '컨트롤러명/컨트롤러안의 함수명
-		$config['base_url'] =base_url('main/index');
-//		$config['total_rows'] = $this->common->select_count('kgart','','');
-//		$config['per_page'] = 10;
-
-//		$this->pagination->initialize($config);
-//		$page = $this->uri->segment(3,0);
-//		$data['pagination']= $this->pagination->create_links();
-//		$limit[1]=$page;
-//		$limit[0]=$config['per_page'];
-
-		//기본목록
+		$limit[0]=5;
+		$order_by=array('key'=>'order','value'=>'desc');
+		//최근 공지사항
+		$data["listA"]= $this->common->select_list_table_result('board a,(select (@rownum:=0) = 0) tmp',$sql='(@rownum:=@rownum+1) as num,a.*,(select kguse.name from kguse where kguse.id = a.user_id) as name',array("type"=>"A"),$coding=false,$order_by,$group_by='',$where_in='',$like='',$joina='',$joinb='',$limit);
+		//최근 자유게시판
+		$data["listB"]= $this->common->select_list_table_result('board a,(select (@rownum:=0) = 0) tmp',$sql='(@rownum:=@rownum+1) as num,a.*,(select kguse.name from kguse where kguse.id = a.user_id) as name',array("type"=>"B"),$coding=false,$order_by,$group_by='',$where_in='',$like='',$joina='',$joinb='',$limit);
+		//최근 구인구직
+		$data["listC"]= $this->common->select_list_table_result('board a,(select (@rownum:=0) = 0) tmp',$sql='(@rownum:=@rownum+1) as num,a.*,(select kguse.name from kguse where kguse.id = a.user_id) as name',array("type"=>"C"),$coding=false,$order_by,$group_by='',$where_in='',$like='',$joina='',$joinb='',$limit);
+		//최근 제품판매
+		$data["listD"]= $this->common->select_list_table_result('board a,(select (@rownum:=0) = 0) tmp',$sql='(@rownum:=@rownum+1) as num,a.*,(select kguse.name from kguse where kguse.id = a.user_id) as name',array("type"=>"D"),$coding=false,$order_by,$group_by='',$where_in='',$like='',$joina='',$joinb='',$limit);
 
 		$this->load->view('layout/topnavstyle/header',$data);
 		$this->load->view('layout/topnavstyle/headerSub',$data);

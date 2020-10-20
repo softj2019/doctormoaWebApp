@@ -12,7 +12,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta property="og:image" content="/assets/img/ci/kogas_ci.png">
-	<title>근거리</title>
+	<title>console</title>
 	<link rel="shortcut icon" type="image⁄x-icon" href="assets/dist/img/ci/kogas_ci.ico">
 
 	<!-- Font Awesome Icons -->
@@ -95,12 +95,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 						<a href="/console/mguser" class="nav-link <?=$menu_code=='009'?'active':''?>">
 							<i class="far fa-circle nav-icon"></i>
 							<p>사용자관리</p>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a href="/console/stibee" class="nav-link <?=$menu_code=='0013'?'active':''?>">
-							<i class="far fa-circle nav-icon"></i>
-							<p>구독자관리</p>
 						</a>
 					</li>
 					<li class="nav-item">

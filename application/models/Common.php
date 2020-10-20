@@ -93,7 +93,8 @@ class Common extends CI_Model
 
         if($joina) $this->db->join($joina[0],$joina[1],$joina[2]);
         if($joinb) $this->db->join($joinb[0],$joinb[1],$joinb[2]);
-        if($limit) $this->db->limit($limit[0],$limit[1]);
+        if(sizeof($limit) == 2) $this->db->limit($limit[0],$limit[1]);
+		if(sizeof($limit) == 1) $this->db->limit($limit[0]);
         if($order_by) $this->db->order_by($order_by['key'],$order_by['value']);
         if($group_by) $this->db->group_by($group_by);
         $result = $this->db->get($table);

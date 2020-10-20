@@ -19,15 +19,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!--					<h5>업로드 필요한 자료가 있는 경우 관리자에게 요청해주십시오.</h5>-->
 					<ul class="nav nav-tabs" id="custom-content-below-tab" role="tablist">
 						<li class="nav-item">
-							<a class="nav-link <?=$this->input->get("board_type")=="A"?"active":""?> " id="custom-content-below-home-tab" data-toggle="pill" href="#custom-content-below-home" role="tab" aria-controls="custom-content-below-home" aria-selected="true" onclick="location.href='/console/boardlist?board_type=A'">지난레터보기</a>
+							<a class="nav-link <?=$this->input->get("board_type")=="A"?"active":""?> " id="board_tab_a" data-toggle="pill" href="#board_a" role="tab" aria-controls="board_a" aria-selected="true" onclick="location.href='/console/boardlist?board_type=A'">
+								공지사항
+							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link <?=$this->input->get("board_type")=="B"?"active":""?>" id="custom-content-below-profile-tab" data-toggle="pill" href="#custom-content-below-profile" role="tab" aria-controls="custom-content-below-profile" aria-selected="false" onclick="location.href='/console/boardlist?board_type=B'">자주하는질문</a>
+							<a class="nav-link <?=$this->input->get("board_type")=="B"?"active":""?>" id="board_tab_b" data-toggle="pill" href="#board_b" role="tab" aria-controls="board_b" aria-selected="false" onclick="location.href='/console/boardlist?board_type=B'">
+								자유게시판
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link <?=$this->input->get("board_type")=="C"?"active":""?>" id="board_tab_b" data-toggle="pill" href="#board_c" role="tab" aria-controls="board_c" aria-selected="false" onclick="location.href='/console/boardlist?board_type=C'">
+								구인구직
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link <?=$this->input->get("board_type")=="D"?"active":""?>" id="board_tab_b" data-toggle="pill" href="#board_d" role="tab" aria-controls="board_d" aria-selected="false" onclick="location.href='/console/boardlist?board_type=D'">
+								제품판매
+							</a>
 						</li>
 					</ul>
 
 					<div class="tab-content" id="custom-content-below-tabContent">
-						<div class="tab-pane fade show active" id="custom-content-below-home" role="tabpanel" aria-labelledby="custom-content-below-home-tab">
+						<div class="tab-pane fade show active" id="board_a" role="tabpanel" aria-labelledby="board_tab_a">
 
 							<table class="table table-hover table-striped">
 								<thead>
@@ -61,7 +75,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 						</div>
-						<div class="tab-pane fade" id="custom-content-below-profile" role="tabpanel" aria-labelledby="custom-content-below-profile-tab">
+						<div class="tab-pane fade" id="board_b" role="tabpanel" aria-labelledby="board_tab_b">
 							<table class="table table-hover table-striped">
 								<thead>
 								<tr>

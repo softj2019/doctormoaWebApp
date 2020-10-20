@@ -46,7 +46,11 @@ class Board  extends CI_Controller
 		if(!$type){
 			$type = "A";
 		}
-		$data['page_title']="지난레터&자주하는질문";
+		if($type=="A")$data['page_title']="공지사항";
+		if($type=="B")$data['page_title']="자유게시판";
+		if($type=="C")$data['page_title']="구인구직";
+		if($type=="D")$data['page_title']="제품판매";
+
 //		$data['page_sub_title']="";
 //        $data['page_css_style']="fee.css";
 		$data['menu_code']="010";

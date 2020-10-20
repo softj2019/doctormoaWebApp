@@ -18,8 +18,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 			<button type="submit" class="login-btn">로그인</button>
 			<ul class="for-ul">
-				<li><a href="">아이디찾기</a></li>
-				<li><a href="">비밀번호찾기</a></li>
+				<li><a href="/member/forid">아이디찾기</a></li>
+				<li><a href="/member/forpw">비밀번호찾기</a></li>
 				<li><a href="/member/join">회원가입</a></li>
 			</ul>
 			<div class="hr"></div>
